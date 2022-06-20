@@ -94,14 +94,14 @@ public abstract class MoveNetActivity extends AppCompatActivity {
             // if the device has a supported GPU, add the GPU delegate
 
 
-            options = new Model.Options.Builder().setDevice(Model.Device.CPU).build();
+            options = new Model.Options.Builder().setDevice(Model.Device.GPU).build();
 
             //options = new Model.Options.Builder().setNumThreads(8).build();
 
             Log.d("OPTION", options.toString());
         } else {
             // if the GPU is not supported, run on 4 threads
-            options = new Model.Options.Builder().setDevice(Model.Device.CPU).build();
+            options = new Model.Options.Builder().setDevice(Model.Device.GPU).build();
             //options = new Model.Options.Builder().setNumThreads(4).build();
         }
         imageProcessor=new MoveNetProcessorBase(this,options);
